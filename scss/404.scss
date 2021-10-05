@@ -1,0 +1,111 @@
+.error404 {
+    background-image: url(../images/border.png);
+    background-repeat: repeat-x;
+    background-position: top;
+    margin-top: 32px;
+    padding-top: 80px;
+    padding-bottom: 69px;
+    &__inner {
+        @include flex;
+    }
+    &__left {
+        width: 373px;
+        margin-left: 51px;
+        & img {
+            width: 100%;
+        }
+    }
+    &__right {
+        margin-left: 43px;
+        padding-left: 73px;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            width: 2px;
+            height: 124px;
+            background: #e31e25;
+            left: 0;
+            top: 33px;
+        }
+    }
+    &__title {
+        font-size: 30px;
+        line-height: 16px;
+        font-weight: 500;
+        color: #262626;
+        margin-bottom: 24px;
+        margin-top: 47px;
+    }
+    &__desc {
+        font-size: 16px;
+        line-height: 16px;
+        font-weight: 400;
+        color: #242424;
+        margin-bottom: 17px;
+    }
+    &__link {
+        margin-top: 33px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .error404 {
+        padding-top: 27px;
+        padding-bottom: 0;
+        &__inner {
+            @include wrap;
+        }
+        &__left {
+            width: 100%;
+            margin-left: 0;
+        }
+        &__title {
+            width: 360px;
+            line-height: 120%;
+            margin-top: 18px;
+            margin-left: 23px;
+        }
+        &__right {
+            padding-left: 0;
+            margin-left: 0;
+            &::after {
+                height: 72px;
+                top: 18px;
+                left: 0px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .error404 {
+        margin-top: 1px;
+        background-size: auto 1px;
+        padding-bottom: 14px;
+        &__title {
+            font-size: 20px;
+            line-height: 24px;
+            width: 140px;
+            margin-top: 9px;
+            margin-left: 25px;
+            margin-bottom: 19px;
+        }
+        &__right {
+            margin-left: 24px;
+            &::after {
+                height: 53px;
+                top: 8px;
+            }
+        }
+        &__desc {
+            font-size: 12px;
+            line-height: 16px;
+            width: 225px;
+        }
+        &__link {
+            margin-top: 23px;
+        }
+    }
+}

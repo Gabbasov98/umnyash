@@ -1,0 +1,259 @@
+.search {
+    margin-top: 20px;
+    padding-bottom: 48px;
+    &__sort {
+        height: 39px;
+        background-color: #ffffff;
+        border: 1px solid #eaeaea;
+        border-radius: 2px;
+        @include flex;
+        @include al-i(center);
+        padding: 0 22px;
+        &>span {
+            font-size: 12px;
+            margin-right: 10px;
+            font-weight: 400;
+            color: #1d1d1d;
+        }
+    }
+    & .nice-select {
+        width: 150px;
+        padding: 0;
+        border: none;
+        font-size: 12px;
+        font-weight: 400;
+        color: #1d1d1d;
+        &:after {
+            background-image: url(../images/select_arrow.png);
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            transform: translateY(-50%) rotate(0deg);
+            top: 50%;
+            transition: all .2s ease;
+            width: 6px;
+            height: 4px;
+        }
+        &.open {
+            &:after {
+                transform: translateY(50%) rotate(180deg);
+                top: unset;
+                bottom: 50%;
+            }
+        }
+    }
+    & .list {
+        left: -13px;
+    }
+    &__items {
+        margin-top: 7px;
+        display: grid;
+        gap: 9px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    &__item--hide {
+        display: none;
+    }
+    & .card {
+        &:hover {
+            border: 1px solid #6fbad9;
+        }
+        &__title:hover a {
+            color: #0c94c7;
+        }
+    }
+    &__all {
+        width: 180px;
+        height: 44px;
+        background-color: #f3f6fb;
+        border-radius: 22px;
+        margin: 32px auto 0;
+        font-size: 13.3px;
+        line-height: 19px;
+        font-weight: 400;
+        color: #616e85;
+        transition: all .3s;
+        &:hover {
+            background-color: #1e98c7;
+            color: #fff;
+        }
+    }
+}
+
+.search-block2 {
+    margin-top: 37px;
+    &__input {
+        padding: 20px 30px;
+        background-color: #e31e25;
+        border-radius: 2px;
+        position: relative;
+        & input {
+            width: 100%;
+            height: 42px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            padding-left: 46px;
+            padding-right: 130px;
+            font-weight: 400;
+            color: #0e0e0e;
+            background-size: 13px auto;
+            background-position: 20px center;
+            background-image: url(../images/svg/search-red.svg);
+            background-repeat: no-repeat;
+        }
+        & button {
+            position: absolute;
+            width: 119px;
+            height: 36px;
+            background-color: #e31e25;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #ffffff;
+            right: 33px;
+            top: 50%;
+            transform: translateY(-50%);
+            & i {
+                font-size: 10px;
+                margin-left: 11px;
+            }
+            &:hover {
+                background-color: #fc282f;
+            }
+        }
+    }
+    &__result {
+        margin-top: 24px;
+        font-size: 16px;
+        font-weight: 400;
+        color: #1d1d1d;
+        & strong {
+            font-weight: 500;
+        }
+        & p:last-child {
+            margin-top: 5px;
+        }
+    }
+    &__error {
+        margin-top: 24px;
+        margin-bottom: 38px;
+        font-size: 16px;
+        font-weight: 400;
+        color: #1d1d1d;
+        & strong {
+            font-weight: 500;
+        }
+        & p {
+            &:nth-child(2) {
+                color: #e31e25;
+                margin-top: 8px;
+            }
+            &:nth-child(3) {
+                margin-top: 22px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .search {
+        &__items {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .search {
+        &__items {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .search {
+        margin-top: 17px;
+        padding-bottom: 28px;
+        &__sort {
+            height: 29px;
+            padding: 0 15px;
+            &>span {
+                font-size: 10px;
+            }
+            & .nice-select {
+                font-size: 10px;
+                width: 125px;
+            }
+            & .option {
+                font-size: 10px;
+            }
+            & .list {
+                left: -8px;
+            }
+        }
+        &__items {
+            margin-top: 13px;
+        }
+        &__all {
+            width: 150px;
+            height: 37px;
+            border-radius: 18.5px;
+            font-size: 12px;
+            margin-top: 21px;
+        }
+    }
+    .search-block2 {
+        margin-top: 21px;
+        &__input {
+            padding: 10px 15px;
+            width: calc(100% + 30px);
+            margin-left: -15px;
+            & input {
+                height: 33px;
+                background-size: 11px auto;
+                background-position: 12px center;
+                font-size: 14px;
+                padding-left: 33px;
+                padding-right: 35px;
+            }
+            & button {
+                width: 29px;
+                height: 29px;
+                right: 17px;
+                background-image: url(../images/svg/search.svg);
+                background-position: center;
+                background-size: 11px auto;
+                background-repeat: no-repeat;
+                & i {
+                    display: none;
+                }
+                & span {
+                    display: none;
+                }
+            }
+        }
+        &__result {
+            font-size: 14px;
+            margin-top: 19px;
+        }
+        &__error {
+            margin-top: 21px;
+            margin-bottom: 35px;
+            font-size: 14px;
+            & p:nth-child(2) {
+                margin-top: 4px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .search {
+        &__items {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}

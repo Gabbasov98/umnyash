@@ -1,0 +1,154 @@
+.ourshop-item {
+    margin-top: 34px;
+    &__inner {
+        @include flex;
+        @include j-c;
+    }
+    &__pay {
+        width: 460px;
+        height: 149px;
+        background-color: #ffffff;
+        border: 1px solid #dfdeea;
+        border-radius: 10px;
+        padding: 40px 60px;
+        @include flex;
+        @include j-c;
+        @include al-i(center);
+        & svg {
+            width: 41px;
+            height: 28px;
+        }
+        & span {
+            font-size: 12px;
+            line-height: 130%;
+            margin-top: 15px;
+            font-weight: 400;
+            color: #242424;
+            display: block;
+        }
+    }
+    & .location__item {
+        width: calc(100% - 481px);
+    }
+    &__gallery {
+        margin-top: 13px;
+        @include flex;
+        @include j-c;
+        gap: 9px;
+        & a {
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+        & img {
+            width: 100%;
+        }
+    }
+}
+
+.map--mt23 {
+    margin-top: 23px;
+}
+
+.map__block--mt0 {
+    margin-top: 0;
+}
+
+.cordinate {
+    margin-top: 25px;
+    margin-bottom: 65px;
+    &__title {
+        font-size: 18px;
+        font-weight: 500;
+        color: #242424;
+    }
+    &__point {
+        margin-top: 15px;
+        @include flex;
+        @include al-i(center);
+        font-size: 16px;
+        font-weight: 400;
+        color: #242424;
+        & svg {
+            width: 17px;
+            height: 15px;
+            margin-right: 14px;
+        }
+    }
+    &__link {
+        margin-top: 35px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .ourshop-item {
+        &__gallery {
+            gap: 5px;
+        }
+        // &__pay {
+        //     width: 350px;
+        //     padding-left: 30px;
+        //     padding-right: 30px;
+        // }
+        // & .location__item {
+        //     width: calc(100% - 360px);
+        // }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .ourshop-item {
+        margin-top: 20px;
+        &__gallery {
+            display: grid;
+            gap: 6px;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        &__pay {
+            width: 330px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        & .location__item {
+            width: calc(100% - 335px);
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mob-no {
+        display: none;
+    }
+    .ourshop-item {
+        &__inner {
+            @include wrap;
+        }
+        & .location__item {
+            width: 100%;
+        }
+        &__pay {
+            border: none;
+            padding: 0;
+            margin-top: 24px;
+            height: unset;
+        }
+        &__gallery {
+            margin-top: 22px;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    .cordinate {
+        margin-bottom: 33px;
+        margin-top: 24px;
+        &__title {
+            font-size: 14px;
+        }
+        &__point {
+            font-size: 14px;
+            margin-top: 13px;
+        }
+        &__link {
+            margin-top: 33px;
+        }
+    }
+}

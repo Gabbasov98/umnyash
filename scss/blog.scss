@@ -1,0 +1,253 @@
+.blog {
+    &__items {
+        @include flex;
+        @include j-c;
+        @include wrap;
+        border-bottom: 1px solid rgba(30, 152, 199, 0.3);
+    }
+    &__item {
+        width: calc(50% - 12px);
+        @include flex;
+        // @include j-c;
+        border-top: 1px solid rgba(#1e98c7, 0.3);
+        padding: 26px 0 46px;
+        &-left {
+            width: 118px;
+            height: 118px;
+            flex-shrink: 0;
+            margin-right: 31px;
+            & a {
+                display: block;
+            }
+            & img {
+                max-width: 100%;
+            }
+        }
+        &-title {
+            font-size: 18px;
+            font-weight: 400;
+            color: #1e98c7;
+            & a {
+                display: block;
+                line-height: 20px;
+            }
+            & a:hover {
+                text-decoration: underline !important;
+                color: #076184;
+            }
+        }
+        &-desc {
+            margin-top: 17px;
+            font-size: 13px;
+            line-height: 20px;
+            font-weight: 400;
+            color: #373737;
+        }
+        &-bottom {
+            @include flex;
+            margin-top: 24px;
+        }
+        &-author {
+            font-size: 12px;
+            line-height: 15px;
+            font-weight: 400;
+            color: #373737;
+            margin-right: 31px;
+            & strong {
+                font-size: 12px;
+                line-height: 16px;
+                font-weight: 500;
+            }
+            & p:last-child {
+                margin-top: 7px;
+                white-space: nowrap;
+            }
+        }
+        &-tags {
+            @include flex;
+            @include j-c;
+            &>div {
+                &:first-child {
+                    font-size: 12px;
+                    line-height: 15px;
+                    font-weight: 400;
+                    color: #373737;
+                    margin-right: 22px;
+                    margin-top: 5px;
+                }
+                &:last-child {
+                    @include flex;
+                    // @include al-i(center);
+                    @include wrap;
+                }
+            }
+        }
+        &-tag {
+            height: 23px;
+            background-color: #f7f7f8;
+            border-radius: 1px;
+            @include flex;
+            justify-content: center;
+            @include al-i(center);
+            font-size: 12px;
+            line-height: 18px;
+            font-weight: 500;
+            color: #1e98c7;
+            margin-right: 4px;
+            transition: all .3s;
+            padding: 0 11px;
+            margin-bottom: 4px;
+            &:hover {
+                color: #fff;
+                background-color: #1e98c7;
+            }
+        }
+        & .blog__item-tag {
+            pointer-events: none;
+        }
+    }
+    &__top {
+        margin-top: 31px;
+        &-title {
+            font-size: 14px;
+            font-weight: 400;
+            color: #373737;
+        }
+    }
+    &__filters {
+        margin-top: 12px;
+        @include flex;
+        @include wrap;
+        @include al-i(center);
+        &-all {
+            font-size: 12px;
+            font-weight: 500;
+            font-style: italic;
+            color: #1e98c7;
+            margin-top: 11px;
+            padding-bottom: 5px;
+            border-bottom: 1px dashed rgba(#1e98c7, 0.52);
+            transition: all .3s;
+            &:hover {
+                border-color: transparent;
+            }
+        }
+    }
+    &__filter {
+        height: 33px;
+        background-color: #1e98c7;
+        border-radius: 1px;
+        padding: 0 11px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #ffffff;
+        margin-right: 3px;
+        margin-bottom: 3px;
+        @include flex;
+        justify-content: center;
+        @include al-i(center);
+        transition: all .3s;
+        &:hover {
+            background-color: #076184;
+            cursor: pointer;
+        }
+    }
+    &__filter--hide {
+        display: none;
+    }
+    &__content {
+        margin-top: 33px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .blog {
+        &__item {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .blog {
+        &__top {
+            margin-top: 21px;
+            &-title {
+                font-size: 12px;
+            }
+        }
+        &__filter {
+            font-size: 11px;
+            height: 23px;
+        }
+        &__filters {
+            margin-top: 13px;
+            &-all {
+                font-size: 10px;
+                padding-bottom: 2px;
+                margin-top: 9px;
+            }
+        }
+        &__content {
+            margin-top: 21px;
+        }
+        &__item {
+            padding-top: 21px;
+            padding-bottom: 18px;
+            &-left {
+                width: 89px;
+                height: 89px;
+                margin-right: 23px;
+            }
+            &-title {
+                font-size: 13px;
+                line-height: 18px;
+                margin-top: -4px;
+            }
+            &-desc {
+                font-size: 10px;
+                line-height: 15px;
+                margin-top: 4px;
+            }
+            &-bottom {
+                margin-top: 11px;
+                @include wrap;
+            }
+            &-author {
+                margin-right: 0;
+                font-size: 10px;
+                line-height: 10px;
+                width: 100%;
+                @include wrap;
+                & p {
+                    width: 100%;
+                    &:last-child {
+                        margin-left: 0;
+                        margin-top: 6px;
+                    }
+                }
+                & strong {
+                    font-size: 10px;
+                    line-height: 10px;
+                }
+            }
+            &-tags {
+                margin-top: 13px;
+                margin-left: -109px;
+                &>div {
+                    &:first-child {
+                        font-size: 10px;
+                        margin-right: 8px;
+                        margin-top: 2px;
+                    }
+                }
+            }
+            &-tag {
+                font-size: 10px;
+                height: 20px;
+                padding: 0 10px;
+                margin-right: 3px;
+            }
+        }
+    }
+}

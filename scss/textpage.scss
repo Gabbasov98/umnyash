@@ -1,0 +1,126 @@
+.text {
+    margin-top: 34px;
+    color: #121212;
+    padding-bottom: 60px;
+    &__inner {
+        border-top: 1px solid rgba(30, 152, 199, 0.3);
+        padding-top: 25px;
+    }
+    &__p {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        & span {
+            text-decoration: underline;
+            color: #0c94c6;
+        }
+        &.mt-8 {
+            margin-top: 8px;
+        }
+        &.mt-22 {
+            margin-top: 22px;
+        }
+    }
+    &__h2 {
+        font-size: 20px;
+        line-height: 36px;
+        font-weight: 500;
+        margin: 4px 0;
+    }
+    &__h3 {
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: 500;
+        margin: 4px 0 8px;
+    }
+    &__h4 {
+        font-size: 16px;
+        line-height: 32px;
+        font-weight: 500;
+        margin: 4px 0;
+    }
+    &__ol {
+        &-title {
+            margin-top: 15px;
+            font-size: 15px;
+            line-height: 24px;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+        &-item {
+            line-height: 24px;
+            font-size: 15px;
+        }
+    }
+    &__ul {
+        &-title {
+            margin-top: 15px;
+            font-size: 15px;
+            line-height: 24px;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+        &-item {
+            line-height: 24px;
+            font-size: 15px;
+            @include flex;
+            @include al-i(center);
+            & i {
+                font-size: 10px;
+                font-weight: 400;
+                color: #e31e25;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .text {
+        margin-top: 16px;
+        padding-bottom: 34px;
+        &__inner {
+            padding-top: 19px;
+        }
+        &__p {
+            font-size: 12px;
+            line-height: 18px;
+            & span {
+                text-decoration: underline;
+                color: #0c94c6;
+            }
+        }
+        &__h2 {
+            font-size: 16px;
+            line-height: 22px;
+        }
+        &__h3 {
+            font-size: 14px;
+            line-height: 19px;
+        }
+        &__h4 {
+            font-size: 13px;
+            line-height: 18px;
+        }
+        &__ol {
+            &-title {
+                font-size: 13px;
+                font-size: 100%;
+            }
+            &-item {
+                line-height: 20px;
+                font-size: 12px;
+            }
+        }
+        &__ul {
+            &-title {
+                font-size: 13px;
+                font-size: 100%;
+            }
+            &-item {
+                line-height: 20px;
+                font-size: 12px;
+            }
+        }
+    }
+}
